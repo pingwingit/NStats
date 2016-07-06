@@ -1,0 +1,545 @@
+﻿<Page x:Class="NuffleStats.PageMatchDetails"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="800" d:DesignWidth="1160"
+	Title="PageMatchDetails">
+
+    <Grid>
+        <Button Width="150" Height="25" Content="Back to match list" HorizontalAlignment="Left" VerticalAlignment="Top" Click="Button_Click"></Button>
+        <TabControl Margin="0,30,0,0" Width="1160">
+            <TabItem Header="Match Summary">
+                <Grid HorizontalAlignment="Center">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="130*"/>
+                        <RowDefinition Height="500*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>                      
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" MinWidth="300"/>
+                            <ColumnDefinition Width="50"/>
+                            <ColumnDefinition Width="*" MinWidth="300"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="25*"/>
+                            <RowDefinition Height="45"/>
+                        </Grid.RowDefinitions>
+                        <!--<DockPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5" Background="BurlyWood"></DockPanel>
+                        <DockPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="5" Background="BurlyWood"></DockPanel>-->
+                        <Label Foreground="White"  Grid.Row="0" Grid.Column="0" Content="{Binding homeTeam}" Padding="0,0,0,0" HorizontalAlignment="Right" FontFamily="./resources/#GutCruncher" FontSize="24"/>
+                        <Label Foreground="White"  Grid.Row="0" Grid.Column="2" Content="{Binding awayTeam}" Padding="0,0,0,0" HorizontalAlignment="Left" FontFamily="./resources/#GutCruncher" FontSize="24" />
+                        <Label Foreground="White" Grid.Row="0" Grid.Column="1" Content="V" Padding="0,0,0,0" HorizontalAlignment="Center" FontFamily="./resources/#GutCruncher" FontSize="18" />
+                        <Label Foreground="White" Grid.Row="1" Grid.Column="0" Content="{Binding homeScore}" Padding="0,0,0,0"  FontFamily="./resources/#GutCruncher"  HorizontalAlignment="Right" FontSize="36" VerticalAlignment="Top" />
+                        <Label Foreground="White" Grid.Row="1" Grid.Column="2" Content="{Binding awayScore}" Padding="0,0,0,0"  FontFamily="./resources/#GutCruncher"  HorizontalAlignment="Left" FontSize="36" VerticalAlignment="Top" />
+                    </Grid>
+
+                    
+
+                    <Grid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="25"/>
+                            <RowDefinition Height="25"/>
+                            <RowDefinition Height="25"/>
+                            <RowDefinition Height="25"/>
+                            <RowDefinition Height="25"/>
+                            <RowDefinition Height="25"/>
+                            <RowDefinition Height="25"/>
+                            <RowDefinition Height="25"/>
+                            <RowDefinition Height="25"/>
+                            <RowDefinition Height="25"/>
+                            <RowDefinition Height="25"/>
+                            <RowDefinition Height="25"/>
+                            <RowDefinition Height="25"/>
+                            <RowDefinition Height="25"/>
+                            <RowDefinition Height="25"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" MinWidth="255"/>
+                            <ColumnDefinition Width="50"/>
+                            <ColumnDefinition Width="40"/>
+                            <ColumnDefinition Width="50"/>
+                            <ColumnDefinition Width="*" MinWidth="255"/>
+                        </Grid.ColumnDefinitions>
+
+                        <!--<DockPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Grid.RowSpan="7" Background="Tan"></DockPanel>
+                        <DockPanel Grid.Row="0" Grid.Column="3" Grid.ColumnSpan="2" Grid.RowSpan="7" Background="Tan"></DockPanel>-->
+
+                        <Label Foreground="White" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Content="{Binding homeCoachedBy}" HorizontalAlignment="Right"/>
+                        <Label Foreground="White" Grid.Row="0" Grid.Column="3" Grid.ColumnSpan="2" Content="{Binding awayCoachedBy}" HorizontalAlignment="Left"/>
+
+                        <Label Foreground="White" Grid.Row="1" Grid.Column="0" Content="Supporters" HorizontalAlignment="Right"/>
+                        <Label Foreground="White" Grid.Row="1" Grid.Column="1" Content="{Binding homeSupporters}" HorizontalAlignment="Right"/>
+                        <Label Foreground="White" Grid.Row="1" Grid.Column="3" Content="{Binding awaySupporters}" HorizontalAlignment="Left"/>
+                        <Label Foreground="White" Grid.Row="1" Grid.Column="4" Content="Supporters" HorizontalAlignment="Left"/>
+
+                        <Label Foreground="White" Grid.Row="2" Grid.Column="0" Content="Cheerleaders" HorizontalAlignment="Right"/>
+                        <Label Foreground="White" Grid.Row="2" Grid.Column="1" Content="{Binding homeCheerleaders}" HorizontalAlignment="Right"/>
+                        <Label Foreground="White" Grid.Row="2" Grid.Column="3" Content="{Binding awayCheerleaders}" HorizontalAlignment="Left"/>
+                        <Label Foreground="White" Grid.Row="2" Grid.Column="4" Content="Cheerleaders" HorizontalAlignment="Left"/>
+
+
+                        <!--<Label Foreground="White" Grid.Row="3" Grid.Column="0" Content="Assistant Coaches" HorizontalAlignment="Right"/>
+                        <Label Foreground="White" Grid.Row="3" Grid.Column="1" Content="?" HorizontalAlignment="Right"/>
+                        <Label Foreground="White" Grid.Row="3" Grid.Column="3" Content="?" HorizontalAlignment="Left"/>
+                        <Label Foreground="White" Grid.Row="3" Grid.Column="4" Content="Assistant Coaches" HorizontalAlignment="Left"/>-->
+                        <Label Foreground="White" Grid.Row="3" Grid.Column="0" Content="Team Value" HorizontalAlignment="Right"/>
+                        <Label Foreground="White" Grid.Row="3" Grid.Column="1" Content="{Binding homeTeamValue}" HorizontalAlignment="Right"/>
+                        <Label Foreground="White" Grid.Row="3" Grid.Column="3" Content="{Binding awayTeamValue}" HorizontalAlignment="Left"/>
+                        <Label Foreground="White" Grid.Row="3" Grid.Column="4" Content="Team Value" HorizontalAlignment="Left"/>
+
+                        <Label Foreground="White" Grid.Row="4" Grid.Column="0" Content="Apothecaries" HorizontalAlignment="Right"/>
+                        <Label Foreground="White" Grid.Row="4" Grid.Column="1" Content="{Binding homeApothecary}" HorizontalAlignment="Right"/>
+                        <Label Foreground="White" Grid.Row="4" Grid.Column="3" Content="{Binding awayApothecary}" HorizontalAlignment="Left"/>
+                        <Label Foreground="White" Grid.Row="4" Grid.Column="4" Content="Apothecaries" HorizontalAlignment="Left"/>
+                        
+                        <Label Foreground="White" Grid.Row="5" Grid.Column="0" Content="Rerolls" HorizontalAlignment="Right"/>
+                        <Label Foreground="White" Grid.Row="5" Grid.Column="1" Content="{Binding homeRerolls}" HorizontalAlignment="Right"/>
+                        <Label Foreground="White" Grid.Row="5" Grid.Column="3" Content="{Binding awayRerolls}" HorizontalAlignment="Left"/>
+                        <Label Foreground="White" Grid.Row="5" Grid.Column="4" Content="Rerolls" HorizontalAlignment="Left"/>
+
+                        
+
+                        <Label Foreground="White" Grid.Row="7"  Grid.Column="0" Content="Passes" HorizontalAlignment="Right"/>
+                        <Label Foreground="White" Grid.Row="7" Grid.Column="1" Content="{Binding homePasses}" HorizontalAlignment="Right"/>
+                        <Label Foreground="White" Grid.Row="7" Grid.Column="3" Content="{Binding awayPasses}" HorizontalAlignment="Left"/>
+                        <Label Foreground="White" Grid.Row="7" Grid.Column="4" Content="Passes" HorizontalAlignment="Left"/>
+
+                        <Label Foreground="White" Grid.Row="8" Grid.Column="0" Content="Catches" HorizontalAlignment="Right"/>
+                        <Label Foreground="White" Grid.Row="8" Grid.Column="1" Content="{Binding homeCatches}" HorizontalAlignment="Right"/>
+                        <Label Foreground="White" Grid.Row="8" Grid.Column="3" Content="{Binding awayCatches}" HorizontalAlignment="Left"/>
+                        <Label Foreground="White" Grid.Row="8" Grid.Column="4" Content="Catches" HorizontalAlignment="Left"/>
+
+                        <!--<Label Foreground="White" Grid.Row="2" Grid.Column="0" Content="Stuns Caused" HorizontalAlignment="Right"/>
+                        <Label Foreground="White" Grid.Row="2" Grid.Column="1" Content="{Binding homeStunsInflicted}" HorizontalAlignment="Right"/>
+                        <Label Foreground="White" Grid.Row="2" Grid.Column="3" Content="{Binding awayStunsInflicted}" HorizontalAlignment="Left"/>
+                        <Label Foreground="White" Grid.Row="2" Grid.Column="4" Content="Stuns Caused" HorizontalAlignment="Left"/>-->
+
+                        <Label Foreground="White" Grid.Row="9" Grid.Column="0" Content="KOs Caused" HorizontalAlignment="Right"/>
+                        <Label Foreground="White" Grid.Row="9" Grid.Column="1" Content="{Binding homeKOsInflicted}" HorizontalAlignment="Right"/>
+                        <Label Foreground="White" Grid.Row="9" Grid.Column="3" Content="{Binding awayKOsInflicted}" HorizontalAlignment="Left"/>
+                        <Label Foreground="White" Grid.Row="9" Grid.Column="4" Content="KOs Caused" HorizontalAlignment="Left"/>
+
+                        <Label Foreground="White" Grid.Row="10" Grid.Column="0" Content="Armour Breaks Caused" HorizontalAlignment="Right"/>
+                        <Label Foreground="White" Grid.Row="10" Grid.Column="1" Content="{Binding homeInjuriesInflicted}" HorizontalAlignment="Right"/>
+                        <Label Foreground="White" Grid.Row="10" Grid.Column="3" Content="{Binding awayInjuriesInflicted}" HorizontalAlignment="Left"/>
+                        <Label Foreground="White" Grid.Row="10" Grid.Column="4" Content="Armour Breaks Caused" HorizontalAlignment="Left"/>
+
+                        <Label Foreground="White" Grid.Row="11" Grid.Column="0" Content="Casualties Caused" HorizontalAlignment="Right"/>
+                        <Label Foreground="White" Grid.Row="11" Grid.Column="1" Content="{Binding homeCasInflicted}" HorizontalAlignment="Right"/>
+                        <Label Foreground="White" Grid.Row="11" Grid.Column="3" Content="{Binding awayCasInflicted}" HorizontalAlignment="Left"/>
+                        <Label Foreground="White" Grid.Row="11" Grid.Column="4" Content="Casualties Caused" HorizontalAlignment="Left"/>
+
+                        <Label Foreground="White" Grid.Row="12" Grid.Column="0" Content="Deaths Caused" HorizontalAlignment="Right"/>
+                        <Label Foreground="White" Grid.Row="12" Grid.Column="1" Content="{Binding homeDeathsInflicted}" HorizontalAlignment="Right"/>
+                        <Label Foreground="White" Grid.Row="12" Grid.Column="3" Content="{Binding awayDeathsInflicted}" HorizontalAlignment="Left"/>
+                        <Label Foreground="White" Grid.Row="12" Grid.Column="4" Content="Deaths Caused" HorizontalAlignment="Left"/>
+
+                    </Grid>                    
+                    
+                </Grid>
+            </TabItem>
+            <TabItem Header="Home Team Roster">
+                <Grid>
+                    <DataGrid HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" ItemsSource="{Binding homePlayers}" AutoGenerateColumns="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="#" Binding="{Binding number}">
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Setter Property="Margin" Value="5,0" />
+                                        <Setter Property="Padding" Value="5,5,5,5" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+                            <DataGridTextColumn Header="Name" Binding="{Binding name}">
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Setter Property="Margin" Value="5,0" />
+                                        <Setter Property="Padding" Value="5,5,5,5" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+                            <DataGridTextColumn Header="Position" Binding="{Binding position}">
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Setter Property="Margin" Value="5,0" />
+                                        <Setter Property="Padding" Value="5,5,5,5" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+                            <DataGridTextColumn Header="MA" Binding="{Binding MA}">
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Setter Property="Margin" Value="5,0" />
+                                        <Setter Property="Padding" Value="5,5,5,5" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+                            <DataGridTextColumn Header="ST" Binding="{Binding ST}">
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Setter Property="Margin" Value="5,0" />
+                                        <Setter Property="Padding" Value="5,5,5,5" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+                            <DataGridTextColumn Header="AG" Binding="{Binding AG}">
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Setter Property="Margin" Value="5,0" />
+                                        <Setter Property="Padding" Value="5,5,5,5" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+                            <DataGridTextColumn Header="AV" Binding="{Binding AV}">
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Setter Property="Margin" Value="5,0" />
+                                        <Setter Property="Padding" Value="5,5,5,5" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+                            <DataGridTextColumn Header="SPP" Binding="{Binding SPP}">
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Setter Property="Margin" Value="5,0" />
+                                        <Setter Property="Padding" Value="5,5,5,5" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+                            <DataGridTextColumn Header="Skills" Binding="{Binding skills}"  Width="200">
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style>
+                                        <Setter Property="TextBlock.TextWrapping" Value="Wrap" />
+                                        <Setter Property="TextBlock.MinHeight" Value="30" />
+                                        <Setter Property="TextBlock.Margin" Value="5,0" />
+                                        <Setter Property="TextBlock.Padding" Value="5,5,5,5" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+                            <DataGridTextColumn Header="Injuries" Binding="{Binding injuries}">
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Setter Property="Margin" Value="5,0" />
+                                        <Setter Property="Padding" Value="5,5,5,5" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+                        </DataGrid.Columns>
+                        <!--<DataGrid.RowStyle>
+                            <Style>
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding injuries}" Value="">
+                                            <Setter Property="Canvas.Background" Value="Maroon"></Setter>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </DataGrid.RowStyle>-->
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Home Team Stats">
+                <Grid>
+                    <DataGrid HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" ItemsSource="{Binding homePlayers}" AutoGenerateColumns="False" x:Name="DataGridHomeTeamStats">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="#" Binding="{Binding number}">
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style>
+                                        <Setter Property="TextBlock.MinHeight" Value="30" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+                            <DataGridTextColumn Header="Name" Binding="{Binding name}" >
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Setter Property="Margin" Value="5,0" />
+                                        <Setter Property="Padding" Value="5,5,5,5" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+                            <DataGridTextColumn Header="Position" Binding="{Binding position}" >
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Setter Property="Margin" Value="5,0" />
+                                        <Setter Property="Padding" Value="5,5,5,5" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+                            <!--<DataGridTextColumn Header="Matches" Binding="{Binding statsMatchesPlayed}">
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Setter Property="Margin" Value="5,0" />
+                                        <Setter Property="Padding" Value="5,5,5,5" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>-->
+                            <DataGridTextColumn Header="Touchdowns" Binding="{Binding statsTouchdowns}">
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Setter Property="Margin" Value="5,0" />
+                                        <Setter Property="Padding" Value="5,5,5,5" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+                            <DataGridTextColumn Header="MVPs" Binding="{Binding statsMVP}">
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Setter Property="Margin" Value="5,0" />
+                                        <Setter Property="Padding" Value="5,5,5,5" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+                            <DataGridTextColumn Header="KOs" Binding="{Binding statsKOs}">
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Setter Property="Margin" Value="5,0" />
+                                        <Setter Property="Padding" Value="5,5,5,5" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+                            <DataGridTextColumn Header="Armour Breaks" Binding="{Binding statsInjuries}">
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Setter Property="Margin" Value="5,0" />
+                                        <Setter Property="Padding" Value="5,5,5,5" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+                            <DataGridTextColumn Header="Casualties" Binding="{Binding statsCasualties}">
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Setter Property="Margin" Value="5,0" />
+                                        <Setter Property="Padding" Value="5,5,5,5" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+                            <DataGridTextColumn Header="Kills" Binding="{Binding statsKills}">
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Setter Property="Margin" Value="5,0" />
+                                        <Setter Property="Padding" Value="5,5,5,5" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+                            <DataGridTextColumn Header="Running" Binding="{Binding statsMetresRunning}">
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Setter Property="Margin" Value="5,0" />
+                                        <Setter Property="Padding" Value="5,5,5,5" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+                            <DataGridTextColumn Header="Passing" Binding="{Binding statsMetresPassing}">
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Setter Property="Margin" Value="5,0" />
+                                        <Setter Property="Padding" Value="5,5,5,5" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Away Team Roster">
+                <Grid>
+                    <DataGrid HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" ItemsSource="{Binding awayPlayers}" AutoGenerateColumns="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="#" Binding="{Binding number}">
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Setter Property="Margin" Value="5,0" />
+                                        <Setter Property="Padding" Value="5,5,5,5" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+                            <DataGridTextColumn Header="Name" Binding="{Binding name}">
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Setter Property="Margin" Value="5,0" />
+                                        <Setter Property="Padding" Value="5,5,5,5" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+                            <DataGridTextColumn Header="Position" Binding="{Binding position}">
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Setter Property="Margin" Value="5,0" />
+                                        <Setter Property="Padding" Value="5,5,5,5" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+                            <DataGridTextColumn Header="MA" Binding="{Binding MA}">
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Setter Property="Margin" Value="5,0" />
+                                        <Setter Property="Padding" Value="5,5,5,5" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+                            <DataGridTextColumn Header="ST" Binding="{Binding ST}">
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Setter Property="Margin" Value="5,0" />
+                                        <Setter Property="Padding" Value="5,5,5,5" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+                            <DataGridTextColumn Header="AG" Binding="{Binding AG}">
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Setter Property="Margin" Value="5,0" />
+                                        <Setter Property="Padding" Value="5,5,5,5" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+                            <DataGridTextColumn Header="AV" Binding="{Binding AV}">
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Setter Property="Margin" Value="5,0" />
+                                        <Setter Property="Padding" Value="5,5,5,5" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+                            <DataGridTextColumn Header="SPP" Binding="{Binding SPP}">
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Setter Property="Margin" Value="5,0" />
+                                        <Setter Property="Padding" Value="5,5,5,5" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+                            <DataGridTextColumn Header="Skills" Binding="{Binding skills}"  Width="200">
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style>
+                                        <Setter Property="TextBlock.TextWrapping" Value="Wrap" />
+                                        <Setter Property="TextBlock.MinHeight" Value="30" />
+                                        <Setter Property="TextBlock.Margin" Value="5,0" />
+                                        <Setter Property="TextBlock.Padding" Value="5,5,5,5" />
+                                    </Style>
+                                    
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+                            <DataGridTextColumn Header="Injuries" Binding="{Binding injuries}">
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Setter Property="Margin" Value="5,0" />
+                                        <Setter Property="Padding" Value="5,5,5,5" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+                        </DataGrid.Columns>
+                        <!--<DataGrid.RowHeight>*</DataGrid.RowHeight>-->
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Away Team Stats">
+                <Grid>
+                    <DataGrid HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" ItemsSource="{Binding awayPlayers}" AutoGenerateColumns="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="#" Binding="{Binding number}">
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style>
+                                        <Setter Property="TextBlock.MinHeight" Value="30" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+                            <DataGridTextColumn Header="Name" Binding="{Binding name}">
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Setter Property="Margin" Value="5,0" />
+                                        <Setter Property="Padding" Value="5,5,5,5" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+                            <DataGridTextColumn Header="Position" Binding="{Binding position}">
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Setter Property="Margin" Value="5,0" />
+                                        <Setter Property="Padding" Value="5,5,5,5" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+                            <DataGridTextColumn Header="Matches" Binding="{Binding statsMatchesPlayed}">
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Setter Property="Margin" Value="5,0" />
+                                        <Setter Property="Padding" Value="5,5,5,5" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+                            <DataGridTextColumn Header="Touchdowns" Binding="{Binding statsTouchdowns}">
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Setter Property="Margin" Value="5,0" />
+                                        <Setter Property="Padding" Value="5,5,5,5" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+                            <DataGridTextColumn Header="MVPs" Binding="{Binding statsMVP}">
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Setter Property="Margin" Value="5,0" />
+                                        <Setter Property="Padding" Value="5,5,5,5" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+                            <DataGridTextColumn Header="KOs" Binding="{Binding statsKOs}">
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Setter Property="Margin" Value="5,0" />
+                                        <Setter Property="Padding" Value="5,5,5,5" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+                            <DataGridTextColumn Header="Armour Breaks" Binding="{Binding statsInjuries}">
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Setter Property="Margin" Value="5,0" />
+                                        <Setter Property="Padding" Value="5,5,5,5" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+                            <DataGridTextColumn Header="Casualties" Binding="{Binding statsCasualties}">
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Setter Property="Margin" Value="5,0" />
+                                        <Setter Property="Padding" Value="5,5,5,5" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+                            <DataGridTextColumn Header="Kills" Binding="{Binding statsKills}">
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Setter Property="Margin" Value="5,0" />
+                                        <Setter Property="Padding" Value="5,5,5,5" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+                            <DataGridTextColumn Header="Running" Binding="{Binding statsMetresRunning}">
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Setter Property="Margin" Value="5,0" />
+                                        <Setter Property="Padding" Value="5,5,5,5" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+                            <DataGridTextColumn Header="Passing" Binding="{Binding statsMetresPassing}">
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Setter Property="Margin" Value="5,0" />
+                                        <Setter Property="Padding" Value="5,5,5,5" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Page>

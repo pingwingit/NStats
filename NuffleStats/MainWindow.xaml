@@ -1,0 +1,14 @@
+﻿<Window x:Class="NuffleStats.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="NuffleStats" Height="800" Width="1000">
+    <Grid Background="{StaticResource BaseColor}">
+    
+        <Frame x:Name="frame" Source="Page_MatchList.xaml" HorizontalAlignment="Left"  Margin="20,70,20,40" VerticalAlignment="Top" NavigationUIVisibility="Hidden"
+            LoadCompleted="frame_LoadCompleted"/>
+        <Label Foreground="White" Content="NuffleStats" HorizontalAlignment="Left" Margin="20,5,0,0" VerticalAlignment="Top"  FontFamily="./resources/#GutCruncher" FontSize="36"/>
+        <Label Foreground="White" Content="NuffleStats 1.22 © SpikesNLead 2016" HorizontalAlignment="Left" Margin="20,0,0,10" VerticalAlignment="Bottom" RenderTransformOrigin="-2.892,-0.303"/>
+
+
+    </Grid>
+</Window>

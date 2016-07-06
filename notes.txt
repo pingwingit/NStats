@@ -1,0 +1,24 @@
+Players with MNG injuries are excluded from the stats for the match they miss - the replay files have no info about them so it is impossible to disaply them without parsing the other replay files to find the match in which they got injured. This would be impossible for the other coach anyway unless both matches were against the same coach.
+
+Assistant Coach numbers are not recorded in the XML? can it reliably be calculated from TV?
+
+
+TODO
+
+Add league/competition info to match listing
+
+Add fame and fanfactor to match summary
+
+CHeck if fanfactor is before or after match
+
+fanfactor change
+
+cash before/cash after/cash earned
+
+teamvalue
+
+work out which injuries are preexisitng and ignore on result page
+
+add crowd surfs to stats <HomeInflictedPushOuts>1</HomeInflictedPushOuts>
+
+add icons - injury cross, skull dead, star 
